@@ -1,4 +1,18 @@
+
+
 def factorial(x):
+  '''
+  Halla el factorial de un número, ose la multiplicación
+  de todos los numeros del 1 hasta ese número
+  >>> factorial(3)
+  6
+  >>> factorial(0)
+  1
+  >>> factorial(34)
+  295232799039604140847618609643520000000
+  >>> factorial(-3)
+  1
+  '''
   factorial=1
   for i in range (1,x+1):
     factorial=factorial*i
@@ -7,12 +21,36 @@ def factorial(x):
 
 
 def potencia(a,b):
+  '''
+  Eleva a al número b
+  >>> potencia(3,0)
+  1
+  >>> potencia(2,3)
+  8
+
+
+  '''
+
+
   potencia=a**b
   print(potencia)
 
 
 
 def sumatoria(a,b):
+  '''
+    Esta funcion suma todos los elementos que hay entre a y b 
+    éstos incluidos
+    >>> sumatoria(2,4)
+    9
+    >>> sumatoria(0,1)
+    1
+    >>> sumatoria(0,100)
+    5050
+
+
+
+     ''' 
   suma=0
   for i in range (a,b+1):
     suma=suma+i
@@ -20,6 +58,16 @@ def sumatoria(a,b):
 
 
 def pitagoras(a,b,c): #coloca 0 el elemento para hallar
+  '''
+    Esta funcion halla el elemento que falta dentro 
+    del triángulo de pitágoras
+       
+    >>> pitagoras (0,5,3)  
+    la hipotenusa es igual a la raiz cuadrada de: 34 = 5.830951894845301
+
+
+
+     ''' 
   if a==0:
     a=a**2
     a=b**2+c**2
@@ -59,10 +107,32 @@ def mcd(a,b):# halla el mcd de dos numeros
 
 
 def tablas(numero):#crea la tabla de multiplicar de cualquier número
+  '''
+
+ >>> tablas(2)
+ 2 x 1 = 2
+ 2 x 2 = 4
+ 2 x 3 = 6
+ 2 x 4 = 8
+ 2 x 5 = 10
+ 2 x 6 = 12
+ 2 x 7 = 14
+ 2 x 8 = 16
+ 2 x 9 = 18
+ 2 x 10 = 20
+
+
+  '''
   for i in range(1, 11):
     print(str(numero) + " x " + str(i) + " = " + str(numero * i))
 
 def porcentaje(a,b):#halla el tanto % de un numero. a=%, y b= al numero.
+
+  '''
+  >>> porcentaje(30,10)
+  el 30%  de 10 = 3.0
+
+  '''
   x=(b*a)/100
   print ("el " + str(a) + "%  de " + str(b) +" = " + str(x))
 
@@ -238,5 +308,7 @@ def numeroabinario(a):# convierte un número entero a número binario
   print()
   for i in range(len(binlista)-1,-1,-1):
     print(binlista[i],end="")
-  
-  
+
+if __name__=='__main__':
+  import doctest
+  doctest.testmod() 
