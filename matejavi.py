@@ -137,7 +137,7 @@ def porcentaje(a,b):#halla el tanto % de un numero. a=%, y b= al numero.
   print ("el " + str(a) + "% de " + str(b) +" = " + str(x))
 
 def listado():
-  lista=("factorial(x), \npotencia(a,b), \nsumatoria(a,b), \npitagoras(a,b,c), \ntablas(numero), \nporcentaje(a,b), \nmcd(a,b),\nmcm(a,b),\necuacion(a,b),  \necuacion2_grado(a,b,c), \nperfecto(a),  \nsumafraccion(a,b,c,d), \ndescomponer(x),\nfibonachi(m), \nmulti_rusa(x,y)")
+  lista=("factorial(x), \npotencia(a,b), \nsumatoria(a,b), \npitagoras(a,b,c), \ntablas(numero), \nporcentaje(a,b), \nmcd(a,b),\nmcm(a,b),\necuacion(a,b),  \necuacion2_grado(a,b,c), \nperfecto(a),  \nsumafraccion(a,b,c,d), \ndescomponer(x),\nfibonachi(m), \nmulti_rusa(x,y), \nsuma_angulos(g1,m1,s1,g2,m2,s2), \nresta_angulos(g1,m1,s1,g2,m2,s2)")
   print(lista)
 
 
@@ -392,6 +392,52 @@ def multi_rusa(x,y):#multiplicacion rusa
     resultado+=x
     cont2+=1
   return resultado
+
+def suma_angulos(g1,m1,s1,g2,m2,s2):
+  '''
+  >>> suma_angulos(24,35,48,12,27,36)
+  "37° 3' 24''"
+ 
+  '''
+  segundos=s1+s2
+  minutos=0
+  grados=0
+  if segundos>60:
+    minutos+=1
+    segundos-=60
+  minutos=minutos+m1+m2
+  if minutos>60:
+    grados+=1
+    minutos-=60
+  grados=grados+g1+g2
+  #return str(grados)+'°'+str(minutos)+"'"+str(segundos)+"''"
+  return ("{}° {}' {}''").format(grados,minutos,segundos)
+
+
+
+
+def resta_angulos(g1,m1,s1,g2,m2,s2):
+  '''
+  >>> resta_angulos(24,35,48,12,27,36)
+  "12° 8' 12''"
+ 
+  '''
+  
+  segundos=s1-s2
+  minutos=0
+  grados=0
+  if g1<g2:
+    minutos-=1
+    segundos=segundos+60
+  minutos=m1-m2+minutos
+  if m1<m2:
+    grados-=1
+    minutos=minutos+60
+  grados=g1-g2+grados
+  #return (str(grados)+"°"+str(minutos)+"'"+str(segundos)+"''")
+  return ("{}° {}' {}''").format(grados,minutos,segundos)
+
+ 
 
 
 
