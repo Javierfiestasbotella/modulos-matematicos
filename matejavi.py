@@ -437,6 +437,8 @@ def resta_angulos(g1,m1,s1,g2,m2,s2):
   #return (str(grados)+"°"+str(minutos)+"'"+str(segundos)+"''")
   return ("{}° {}' {}''").format(grados,minutos,segundos)
 
+  #ejemplo
+
  
 
 
